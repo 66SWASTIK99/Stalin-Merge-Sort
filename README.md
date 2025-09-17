@@ -32,11 +32,11 @@ weakness:
         (just a theory)
 
 <br>
-
+<br>
+<br>
 
 Example:
     7, 5, 8, 11, 4, 9, 15, 16, 3, 2
-
 <br>
 Step 1:<br>
 Ordered<br>
