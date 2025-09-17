@@ -24,34 +24,51 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2, int merged[
 void snm(int *arr, int size, int *sorted){
     if(size<=1) return;
 
-    int *half1 = new int [size/2];
+    int *ordered = new int [size/2];
     int *disorder = new int [size];
-    half1[0] = arr[0];
+    ordered[0] = arr[0];
     int j=0, k=0;
     for(int i=1; i<size; i++){
-        if(half1[j]>arr[i]){
+        if(ordered[j]>arr[i]){
             disorder[k++] = arr[i];
         }
         else{
-            half1[++j] = arr[i];
+            ordered[++j] = arr[i];
         }
     }
+
+    //k is the size of disorder array
+    //j is the size of ordered array
+
+    // Optimize memory usage by resizing ordered array if it's significantly smaller than allocated size
+    if(j/size <= 0.2){
+        int *rearrange = new int [j+1];
+        for(int i=0; i<=j; i++){
+            rearrange[i] = ordered[i];
+        }
+        delete[] ordered;
+        ordered = rearrange;   
+    }
+
     //while(i>0){cout << disorder[--i] << " ";}
     //cout << endl;
     // int *half2 = new int [k];
     // for (int i = 0; i < k; i++) {
     //     half2[i] = disorder[i];
     // }
+
     // int i = k;
     //while(i>0){cout << half2[--i] << " ";}
     //cout << endl;
     
     // delete[] disorder;
 
-    //sas(half1, sizeof(half1) / sizeof(half1[0]));
+    //sas(ordered, sizeof(ordered) / sizeof(ordered[0]));
+
+    
     snm(disorder, k, disorder);
-    mergeSortedArrays(half1, j+1, disorder, k, sorted);
-    delete[] half1;
+    mergeSortedArrays(ordered, j+1, disorder, k, sorted);
+    delete[] ordered;
     // delete[] half2;
     return;
 }
