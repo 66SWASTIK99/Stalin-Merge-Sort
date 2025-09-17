@@ -16,9 +16,9 @@ This process of sorting is to just take those number that can stay in ordered se
         -if not store it in separate array of disordered number
         <br>
     -repeat until array is finished
-
 <br>
 -now do the same for disordered technique
+
 
 <br>
 weakness:
