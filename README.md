@@ -32,6 +32,8 @@ weakness:
         (just a theory)
 
 <br>
+
+
 Example:
     7, 5, 8, 11, 4, 9, 15, 16, 3, 2
 
