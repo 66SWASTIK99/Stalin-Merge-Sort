@@ -1,6 +1,6 @@
 SNM_sort -> Stalin aNd Merge
 
-The process of sorting is to just take the number that can be in order from the sequence
+This process of sorting is to just take the number that can be in order from the sequence
 
 -take the first number and it is stored in array "ordered"
     -check whether the next number is greater than the previous number(ordered number)
